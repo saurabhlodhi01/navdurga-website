@@ -1,0 +1,184 @@
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Baloo 2", cursive;
+  overflow-x: hidden;
+  background: #ffebee;
+  color: #333;
+}
+
+/* Background Canvas */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(255, 105, 180, 0.8);
+  color: white;
+}
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-size: 1.2rem;
+}
+
+/* Slideshow */
+.slideshow {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  transition: opacity 1s;
+}
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Greetings */
+.greetings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  padding: 2rem;
+  width: 250px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Music Control */
+.music-control {
+  text-align: center;
+  padding: 2rem;
+}
+button {
+  background-color: #ff1493;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #ff69b4;
+}
+
+/* Footer */
+footer {
+  background-color: #ff69b4;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  /* position: sticky; */
+  bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .greetings {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+/* flowers */
+
+
+
+.falling-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;  /* क्लिक block न हो */
+  overflow: hidden;
+  z-index: 9999;         /* सबके ऊपर */
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  background-image: url('/images/flower.png'); /* अपना फूल का PNG/transparent image डालो */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.7;
+  }
+}
+
+
+
+.falling-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.7;
+  }
+}
